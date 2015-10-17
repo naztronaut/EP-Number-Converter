@@ -1,112 +1,95 @@
 //Include file for number_converter.php - EasyProgramming.net
-
 <?php
 
-         if(isset($_POST['numtype']))
-        {
+function convert_num($innum, $outnum)
+{
             
 //        convert from Decimal to hex, oct, binary, and dec
-         if($_POST['numtype']== 'decimal' && $_POST['outtype'] == 'hexadecimal')   
+         if($innum == 'decimal' && $outnum == 'hexadecimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = strtoupper(dechex($_POST['innum']));
+            return $converted;
          }
-         if($_POST['numtype']== 'decimal' && $_POST['outtype'] == 'octal')   
+         elseif($innum == 'decimal' && $outnum == 'octal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decoct($_POST['innum']);
+            return $converted;
          }
-         if($_POST['numtype']== 'decimal' && $_POST['outtype'] == 'binary')   
+         elseif($innum == 'decimal' && $outnum == 'binary')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decbin($_POST['innum']);
+            return $converted;
          }
-         if($_POST['numtype']== 'decimal' && $_POST['outtype'] == 'decimal')   
+         elseif($innum == 'decimal' && $outnum == 'decimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = $_POST['innum'];
+            return $converted;
          }
         
 //            convert from binary to hex, oct, bin, dec
-         if($_POST['numtype']== 'binary' && $_POST['outtype'] == 'hexadecimal')   
+         elseif($innum == 'binary' && $outnum == 'hexadecimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = strtoupper(dechex(bindec($_POST['innum'])));
+            return $converted;
          }
-         if($_POST['numtype']== 'binary' && $_POST['outtype'] == 'octal')   
+         elseif($innum == 'binary' && $outnum == 'octal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decoct(bindec($_POST['innum']));
+            return $converted;
          }
-         if($_POST['numtype']== 'binary' && $_POST['outtype'] == 'binary')   
+         elseif($innum == 'binary' && $outnum == 'binary')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = $_POST['innum'];
+            return $converted;
          }
-         if($_POST['numtype']== 'binary' && $_POST['outtype'] == 'decimal')   
+         elseif($innum == 'binary' && $outnum == 'decimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = bindec($_POST['innum']);
+            return $converted;
          }
             
 //        hexadecimal to hex, oct, bin, dechexadecimal  
-         if($_POST['numtype']== 'hexadecimal' && $_POST['outtype'] == 'hexadecimal')   
+         elseif($innum == 'hexadecimal' && $outnum == 'hexadecimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = strtoupper($_POST['innum']);
+            return $converted;
          }
-         if($_POST['numtype']== 'hexadecimal' && $_POST['outtype'] == 'octal')   
+         elseif($innum == 'hexadecimal' && $outnum == 'octal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decoct(hexdec($_POST['innum']));
+            return $converted;
          }
-         if($_POST['numtype']== 'hexadecimal' && $_POST['outtype'] == 'binary')   
+         elseif($innum == 'hexadecimal' && $outnum == 'binary')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decbin(hexdec($_POST['innum']));
+             return $converted;
          }
-         if($_POST['numtype']== 'hexadecimal' && $_POST['outtype'] == 'decimal')   
+         elseif($innum == 'hexadecimal' && $outnum == 'decimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = hexdec($_POST['innum']);
+             return $converted;
          }
             
         //        oct to hex, oct, bin, dechexadecimal  
-         if($_POST['numtype']== 'octal' && $_POST['outtype'] == 'hexadecimal')   
+         elseif($innum == 'octal' && $outnum == 'hexadecimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = strtoupper(dechex(octdec($_POST['innum'])));
+             return $converted;
          }
-         if($_POST['numtype']== 'octal' && $_POST['outtype'] == 'octal')   
+         elseif($innum == 'octal' && $outnum == 'octal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = $_POST['innum'];
+             return $converted;
          }
-         if($_POST['numtype']== 'octal' && $_POST['outtype'] == 'binary')   
+         elseif($innum == 'octal' && $outnum == 'binary')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = decbin(octdec($_POST['innum']));
+             return $converted;
          }
-         if($_POST['numtype']== 'octal' && $_POST['outtype'] == 'decimal')   
+         elseif($innum == 'octal' && $outnum == 'decimal')   
          {
-            $innum = $_POST['numtype'];
-            $outnum = $_POST['outtype'];
             $converted = octdec($_POST['innum']);
+             return $converted;
          }     
-        }
+}
 ?>
