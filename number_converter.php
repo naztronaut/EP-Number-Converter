@@ -1,5 +1,6 @@
 <!--Script created by Nazmus at www.EasyProgramming.net -->
-
+//include function file for conversion
+<?php include("includes/conversions.php"); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -61,8 +62,14 @@
 
 // Activates code block if submit button is clicked
     if(isset($_POST['submit'])){
-    //include the conversions.php file which contains logic and formulas for conversion
-      include("includes/conversions.php");
+   //if Numtype is passed - will not process otherwise
+    if(isset($_POST['numtype']))
+        {
+        //Store input type and output type and call convert_num function - it will return the converted value
+            $innum = $_POST['numtype'];
+            $outnum = $_POST['outtype'];
+            $converted = convert_num($innum, $outnum);
+        }
 
 ?>
 <!--Form input to display sorted values - only appears if submitted -->
