@@ -1,5 +1,5 @@
-<!--Script created by Nazmus at www.EasyProgramming.net -->
-//include function file for conversion
+Script created by Nazmus at www.EasyProgramming.net -->
+<!--include function file for conversion-->
 <?php include("includes/conversions.php"); ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
